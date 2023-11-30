@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Renta de Autos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="sidebar collapsed" id="sidebar">
+        <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+        <ul>
+            <li><a href="index.html" onclick="toggleSidebar()">Inicio</a></li>
+            <li><a href="acercaDe.html" onclick="toggleSidebar()">Acerca de</a></li>
+            <li><a href="opiniones.html" onclick="toggleSidebar()">¿Opiniones?</a></li>
+        </ul>
+    </div>
+
+    <h1>RENTA DE AUTOS EN CHIHUAHUA</h1>
+
+    <h2>¡Los más populares!</h2>
+    <h3>Haz click en la imagen para verlos.</h3>
+    <div class="Top">
+        <a href="Top3.html">
+            <img src="images/Tops.jpg" alt="Los más populares.">
+        </a>
+    </div>
+
+    <h2>¡Tenemos más opciones para ti!</h2>
+
+    <div class="grupoDe3">
+        <div class="vehiculo">
+            <h3>Economico</h3>
+            <p>$180 por día</p>
+        </div>
+    
+        <div class="vehiculo">
+            <h3>Intermedio</h3>
+            <p>$220 por día</p>
+        </div>
+    
+        <div class="vehiculo">
+            <h3>Full-size</h3>
+            <p>$260 por día</p>
+        </div>
+    </div>
+
+    <button id="botonMostrarMas">Ver más</button>
+    <div id="contenidoAdicional" style="display: none;">
+    
+        <div class="grupoDe3">
+            <div class="vehiculo">
+                <h3>Standard</h3>
+                <p>$220 por día</p>
+            </div>
+            
+            <div class="vehiculo">
+                <h3>Intermedio</h3>
+                <p>$220 por día</p>
+            </div>
+            
+            <div class="vehiculo">
+                <h3>Compacto</h3>
+                <p>$180 por día</p>
+            </div>
+        </div>
+        
+        <div class="grupoDe3">
+            <div class="vehiculo">
+                <h3>Standard</h3>
+                <p>$220 por día</p>
+            </div>
+
+            <div class="vehiculo">
+                <h3>Intermedio</h3>
+                <p>$220 por día</p>
+            </div>
+
+            <div class="vehiculo">
+                <h3>Full-size</h3>
+                <p>$260 por día</p>
+            </div>
+        </div>
+
+        <div class="grupoDe3">
+            <div class="vehiculo">
+                <h3>Compacto</h3>
+                <p>$180 por día</p>
+            </div>
+
+            <div class="vehiculo">
+                <h3>Standard</h3>
+                <p>$220 por día</p>
+            </div>
+
+            <div class="vehiculo">
+                <h3>Full-size</h3>
+                <p>$260 por día</p>
+            </div>
+        </div>
+        
+        <div class="grupoDe3">
+            <div class="vehiculo">
+                <h3>Compacto</h3>
+                <p>$180 por día</p>
+            </div>
+
+            <div class="vehiculo">
+                <h3>Economico</h3>
+                <p>$180 por día</p>
+            </div>
+
+            <div class="vehiculo">
+                <h3>Standard</h3>
+                <p>$220 por día</p>
+            </div>
+        </div>
+    
+        <div class="grupoDe3">
+            <div class="vehiculo">
+                <h3>Compacto</h3>
+                <p>$180 por día</p>
+            </div>
+
+            <div class="vehiculo">
+                <h3>Intermedio</h3>
+                <p>$220 por día</p>
+            </div>
+
+            <div class="vehiculo">
+                <h3>Economico</h3>
+                <p>$180 por día</p>
+            </div>
+        </div>
+
+        <div class="grupoDe3">
+            <div class="vehiculo">
+                <h3>Compacto</h3>
+                <p>$180 por día</p>
+            </div>
+
+            <div class="vehiculo">
+                <h3>Standard</h3>
+                <p>$220 por día</p>
+            </div>
+
+            <div class="vehiculo">
+                <h3>Full-size</h3>
+                <p>$260 por día</p>
+            </div>
+        </div>
+
+        <div class="grupoDe3">
+            <div class="vehiculo">
+                <h3>Compacto</h3>
+                <p>$180 por día</p>
+            </div>
+
+            <div class="vehiculo">
+                <h3>Intermedio</h3>
+                <p>$220 por día</p>
+            </div>
+
+            <div class="vehiculo">
+                <h3>Economico</h3>
+                <p>$180 por día</p>
+            </div>
+        </div>
+        
+        <div class="grupoDe3">
+            <div class="vehiculo">
+                <h3>Full-size</h3>
+                <p>$260 por día</p>
+            </div>
+
+            <div class="vehiculo">
+                <h3>Standard</h3>
+                <p>$220 por día</p>
+            </div>
+
+            <div class="vehiculo">
+                <h3>Economico</h3>
+                <p>$180 por día</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('botonMostrarMas').addEventListener('click', function() {
+            var contenido = document.getElementById('contenidoAdicional');
+            if (contenido.style.display === 'none') {
+                contenido.style.display = 'block';
+                document.getElementById('botonMostrarMas').textContent = 'Mostrar menos';
+            } else {
+                contenido.style.display = 'none';
+                document.getElementById('botonMostrarMas').textContent = 'Mostrar más';
+            }
+        });
+
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('collapsed');
+        }
+    </script>
+</body>
+</html>
+

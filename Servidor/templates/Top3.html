@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Renta de Autos - Top 3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="sidebar collapsed" id="sidebar">
+        <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+        <ul>
+            <li><a href="index.html" onclick="toggleSidebar()">Inicio</a></li>
+            <li><a href="acercaDe.html" onclick="toggleSidebar()">Acerca de</a></li>
+            <li><a href="opiniones.html" onclick="toggleSidebar()">¿Opiniones?</a></li>
+        </ul>
+    </div>
+
+    <h1>Elige el que más te guste.</h1>
+
+    <div class="grupoDe3">
+        <div class="vehiculoTop">
+            <h3>TOP 1</h3>
+            <img src="images/carro1.png" alt="Auto 1">
+            <p>SUV Intermedio</p>
+            <li>Toyota 2019</li>
+            <li>5 adultos</li>
+            <li>2 bolsas</li>
+            <li>Automatico</li>
+            <li>A/C Disponible</li>
+            <p>$300 por día</p>
+        </div>
+
+        <!-- Segundo vehículo con imagen -->
+        <div class="vehiculoTop">
+            <h3>TOP 2</h3>
+            <img src="images/carro2.png" alt="Auto 2">
+            <p>Standard</p>
+            <li>Nissan 2017</li>
+            <li>5 adultos</li>
+            <li>2 bolsas</li>
+            <li>Manual</li>
+            <li>A/C Disponible</li>
+            <p>$280 por día</p>
+        </div>
+
+        <!-- Tercer vehículo con imagen -->
+        <div class="vehiculoTop">
+            <h3>TOP 3</h3>
+            <img src="images/carro3.png" alt="Auto 3">
+            <p>SUV Compacto</p>
+            <li>Chevrolet 2020</li>
+            <li>4 adultos</li>
+            <li>2 bolsas</li>
+            <li>Automatico</li>
+            <li>A/C Disponible</li>
+            <p>$740 por día</p>
+        </div>
+    </div>
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('collapsed');
+        }
+    </script>
+</body>
+</html>
