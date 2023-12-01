@@ -5,6 +5,7 @@ const path = require('path');
 const server = http.createServer((req, res) => {
   let filePath = `.${req.url}`;
 
+  // Si la ruta es solo '/', redireccionar a 'index.html'
   if (filePath === './') {
     filePath = './index.html';
   }
@@ -30,21 +31,23 @@ const server = http.createServer((req, res) => {
   fs.readFile(filePath, (err, content) => {
     if (err) {
       if (err.code === 'ENOENT') {
-        res.writeHead(404);
-        res.end('404 Not Found');
-      } else {
+        fs.readFile('./404.html', (err, notFoundContent) =>{
+          res.writeHead(404, {'Content-Type': 'text/html'});
+          res.end(notFoundContent, 'utf-8');
+        });
+      }else {
         res.writeHead(500);
-        res.end('Internal Server Error');
+        res.end(`Internal Server Error: ${err.code}`);
       }
-    } else {
+    }else {
       res.writeHead(200, { 'Content-Type': contentType });
       res.end(content, 'utf-8');
     }
-  });
+    });
 });
 
 const PORT = 8888;
 
 server.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Server running at http://localhost:${PORT}/`);
 });
