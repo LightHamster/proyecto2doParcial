@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Opiniones - Renta de Automóviles</title>
+  <link rel="stylesheet" href="./styles/contacto.css">
+</head>
+<body>
+  <div class="sidebar collapsed" id="sidebar">
+    <button class="toggle-btn" onclick="toggleSidebar()">  ☰  </button>
+    <ul>
+      <li><a href="index.html" onclick="toggleSidebar()">Inicio</a></li>
+      <li><a href="acercaDe.html" onclick="toggleSidebar()">Acerca de</a></li>
+      <li><a href="contacto.html" onclick="toggleSidebar()">Contacto</a></li>
+    </ul>
+  </div>
+
+  <div class="container">
+    <h2>Contacto</h2>
+    <p>Puedes contactarnos a través de:</p>
+    <ul>
+      <li>Teléfono: (614) 284-82-49</li>
+      <li>Email: AutosUACH@uach.mx</li>
+      <li>Dirección: Calle Venustiano Carranza #3, Chihuahua, México</li>
+    </ul>
+
+    <p>También aquí mismo a través de nuestra WEB!</p>
+  </div>
+
+  <div class="formulario">
+    <form id="formularioOpinion">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required>
+
+      <label for="email">Correo electrónico:</label>
+      <input type="text" id="email" name="email" required>
+
+      <label for="opinion">Tu opinión:</label>
+      <textarea id="opinion" name="opinion" rows="4" required></textarea>
+
+      <input type="button" value="Enviar opinión" onclick="enviarOpinion()">
+    </form>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2023 Renta de autos UACH - Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('collapsed');
+    }
+
+    function enviarOpinion() {
+      const nombre = document.getElementById('nombre').value;
+      const email = document.getElementById('email').value;
+      const opinion = document.getElementById('opinion').value;
+
+      const comentario = `Nombre: ${nombre}\nEmail: ${email}\nOpinión: ${opinion}\n\n`;
+
+      // Enviar el comentario al servidor
+      fetch('/procesar_opinion', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: `comentario=${encodeURIComponent(comentario)}`,
+      })
+        .then(response => response.text())
+        .then(data => {
+          console.log(data);
+          alert('Comentario enviado exitosamente');
+        })
+        .catch(error => {
+          console.error('Error al enviar el comentario:', error);
+          alert('Error al enviar el comentario');
+        });
+    }
+  </script>
+</body>
+</html>

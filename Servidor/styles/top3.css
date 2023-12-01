@@ -1,0 +1,167 @@
+body{
+    background-color: rgb(220, 20, 20);
+}
+
+h1 {
+    text-align: center;
+    color: #ffffff; /* Cambia el color del texto */
+    font-family: 'Kanit', sans-serif; /* Cambia la fuente del texto */
+    font-size: 3em; /* Cambia el tamaño del texto */
+}
+
+h2{
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Kanit', sans-serif;
+    font-size: 2em;
+}
+
+h3{
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Kanit', sans-serif;
+    font-size: 1.5em;
+}
+
+p{
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Kanit', sans-serif;
+    font-size: 1em;
+}
+
+li{
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Kanit', sans-serif;
+    font-size: 1em;
+}
+
+.vehiculoTop {
+    border: 5px solid #ffffff;
+    font-family: 'Kanit', sans-serif;
+    padding: 30px;
+    margin: 10px;
+    width: 250px;
+    text-align: center;
+    display: inline-block;
+}
+
+.vehiculo {
+    border: 5px solid rgb(249, 239, 45);
+    font-family: 'Kanit', sans-serif;
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+    text-align: center;
+    display: inline-block;
+}
+
+@font-face {
+        font-family: 'Kanit';
+        src: url('fonts/Kanit-LightItalic.ttf')
+}
+
+.Top {
+    display: flex; /* Utiliza flexbox para alinear y centrar */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;
+    .contenedorImagen {
+        display: flex; /* Utiliza flexbox para alinear y centrar */
+        justify-content: center; /* Centra horizontalmente */
+        align-items: center;
+        width: 300px; /* Ancho del contenedor */
+        height: 200px; /* Altura del contenedor */
+        background-image: url('/images/Tops.jpg'); /* Ruta de la imagen */
+        background-size: cover; /* Ajustar el tamaño de la imagen al contenedor */
+        background-position: center; /* Centrar la imagen en el contenedor */
+    }
+}
+
+#botonMostrarMas {
+    display: block;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    font-size: 15px;
+}
+
+.grupoDe3 {
+    display: flex; /* Utiliza flexbox para alinear y centrar */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    margin-bottom: 20px; /* Espacio entre grupos */
+}
+
+/* Para dividir en grupos de 3 */
+.grupoDe3:nth-child(3n+1) {
+    clear: both;
+}
+
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #000000;
+    padding-top: 20px;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    padding: 10px;
+  }
+  
+  .sidebar ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .sidebar ul li a:hover {
+    color: lightgray;
+  }
+  
+  .content {
+    margin-left: 250px;
+    padding: 20px;
+  }
+  
+  /* Para hacer la página responsive */
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 30%;
+      position: static;
+    }
+  
+    .content {
+      margin-left: 0;
+    }
+  }
+
+.collapsed {
+    width: 40px;
+  }
+  
+  .collapsed ul li {
+    padding: 10px 5px;
+  }
+  
+  .collapsed .toggle-btn {
+    display: block;
+    margin: 10px auto;
+  }
+  .collapsed ul li a {
+    display: none;
+  }
+  
+  .collapsed ul li a:hover {
+    display: block;
+    color: lightgray;
+    text-decoration: none;
+  }
