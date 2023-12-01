@@ -47,7 +47,7 @@ No se realizo un deployment de este proyecto
 
 * [NodeJs]([https://rometools.github.io/rome/](https://nodejs.org/en)) - Entorno de ejecucion de JS
 
-## Contributing
+## Contribuir
 
 RECOMENDADO:
 Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
